@@ -20,7 +20,6 @@ jobs:
       with: 
         spec: cypress/e2e/production-basic.cy.js
         
-    - name: Notify when failure
     - uses: ravsamhq/notify-slack-action@v2
       if: always()
       with:
