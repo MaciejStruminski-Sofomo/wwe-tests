@@ -2,7 +2,7 @@ name: Cypress tests and slack notifiaction
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '* * * * *'
 
 jobs:
   cypress-run:
