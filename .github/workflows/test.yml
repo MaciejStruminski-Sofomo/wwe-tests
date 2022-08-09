@@ -20,8 +20,6 @@ jobs:
       with: 
         spec: cypress/e2e/production-basic.cy.js
  
-
-    - run: exit 1
     - name: Slack Failure
       if: always()
       uses: kpritam/slack-job-status-action@v1
