@@ -1,0 +1,22 @@
+{
+  "name": "wwe-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaciejStruminski-Sofomo/wwe-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaciejStruminski-Sofomo/wwe-tests/issues"
+  },
+  "homepage": "https://github.com/MaciejStruminski-Sofomo/wwe-tests#readme",
+  "devDependencies": {
+    "cypress": "^10.4.0"
+  }
+}
