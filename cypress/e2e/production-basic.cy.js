@@ -85,8 +85,6 @@ describe('production basic tests', () => {
         homepage.pageTitle().should('contain', "red polo");
         categoriesPage.filterHeading().within(button => {
             expect(button[0]).contain('Colour');
-            expect(button[1]).contain('Product Tags');
-            expect(button[2]).contain('Garment Type');
         });
     });
 });
