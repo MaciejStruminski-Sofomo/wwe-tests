@@ -21,10 +21,9 @@ jobs:
         spec: cypress/e2e/production-basic.cy.js
  
     - name: Slack Failure
+    - uses: ravsamhq/notify-slack-action@v2
       if: always()
-      uses: kpritam/slack-job-status-action@v1
       with:
-        job-status: ${{ job.status }}
-        notify_when: 'failure'
-        slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
-        channel: C03SQ92V8NS
+        status: ${{ job.status }} # required
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
