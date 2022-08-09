@@ -19,10 +19,10 @@ jobs:
       uses: cypress-io/github-action@v4
       with: 
         spec: cypress/e2e/production-basic.cy.js
-    - name: Notify slack
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: pullreminders/slack-action@master
+    - name: Slack Success
+      if: always()
+      uses: kpritam/slack-job-status-action@v1
       with:
-        job-status: ${{ job.status }}
-        args: '{\"channel\":\"C03SQ92V8NS\",\"text\":\"Hello world \"}'
+          job-status: ${{ job.status }}
+          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel: C03SQ92V8NS
