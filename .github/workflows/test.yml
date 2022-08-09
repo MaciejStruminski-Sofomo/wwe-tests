@@ -24,4 +24,5 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03SQ92V8NS\",\"text\":\"Hello world\"}'
+        job-status: ${{ job.status }}
+        args: '{\"channel\":\"C03SQ92V8NS\",\"text\":\"Hello world \"}'
