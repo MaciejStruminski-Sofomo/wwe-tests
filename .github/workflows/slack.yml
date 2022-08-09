@@ -1,0 +1,27 @@
+name: Cypress tests
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  cypress-run:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.4.2
+      
+    - name: Cypress run
+      uses: cypress-io/github-action@v4
+      with: 
+        spec: cypress/e2e/production-basic.cy.js
+        
+    - uses: ravsamhq/notify-slack-action@v2
+      if: always()
+      with:
+          status: ${{ job.status }} # required
+          notify_when: 'failure'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
