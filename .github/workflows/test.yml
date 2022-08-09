@@ -20,11 +20,10 @@ jobs:
       with: 
         spec: cypress/e2e/production-basic.cy.js
  
-    - name: Slack Failure
     - uses: ravsamhq/notify-slack-action@v2
       if: always()
       with:
-        status: ${{ job.status }} # required
-        notify_when: "failure"
+          status: ${{ job.status }} # required
+          notify_when: 'failure'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
