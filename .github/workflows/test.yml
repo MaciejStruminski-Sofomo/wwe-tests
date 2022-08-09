@@ -25,5 +25,6 @@ jobs:
       uses: kpritam/slack-job-status-action@v1
       with:
         job-status: ${{ job.status }}
+        notify_when: 'failure'
         slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
         channel: C03SQ92V8NS
