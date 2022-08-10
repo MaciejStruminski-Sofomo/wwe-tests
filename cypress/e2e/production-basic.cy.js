@@ -34,6 +34,7 @@ describe('production basic tests', () => {
         categoriesPage.pagination().should('be.visible');
     });
     it('check filters title', () => {
+        cy.wait(1000)
         categoriesPage.filterHeading().should('have.length', 3).within(button => {
             expect(button[0]).contain('Colour');
             expect(button[1]).contain('Features');
