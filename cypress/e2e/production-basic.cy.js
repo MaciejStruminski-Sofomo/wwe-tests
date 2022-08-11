@@ -51,7 +51,7 @@ describe('production basic tests', () => {
             });
         });
     });
-    it('Should enter single product page and check title and logo', () => {
+    it('Should enter single product page and check title and logo',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/fruit-of-the-loom-premium-polo-shirt/');
         cy.get('h1').should('contain', 'Fruit Of The Loom Premium Polo Shirt');
         cy.get('h1')
@@ -79,7 +79,7 @@ describe('production basic tests', () => {
                 expect(itemPrice).be.equal('9.94');
             });
     });
-    it('Should enter red polo in search field and check if results are displayed', () => {
+    it('Should enter red polo in search field and check if results are displayed',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/');
         homepage.searchInput().type('red polo{enter}');
         cy.wait(2000)
