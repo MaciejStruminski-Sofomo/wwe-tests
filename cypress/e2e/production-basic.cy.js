@@ -27,13 +27,13 @@ describe('production basic tests', () => {
         cy.get('a[class=Header-headerLogoLink-SGA]').click();
         cy.url().should('eq', 'https://www.workwearexpress.com/');
     });
-    it('Enter products page and check if items exists', () => {
+    it('Enter products page and check if items exists', { retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/polo-shirts/mens-polos');
         categoriesPage.categoryName().should('have.text', "Men's Polo Shirts");
         categoriesPage.categoryProductItem().should('have.length', 20);
         categoriesPage.pagination().should('be.visible');
     });
-    it('check filters title', () => {
+    it('check filters title', { retries: 3 }, () => {
         cy.wait(1000)
         categoriesPage.allFiltersBtn().should('be.visible');
         cy.get('button.LayeredNav-filterOptionToggle-1T8').should('have.length', 3).within(button => {
