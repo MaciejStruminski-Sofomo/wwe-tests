@@ -35,7 +35,8 @@ describe('production basic tests', () => {
     });
     it('check filters title', () => {
         cy.wait(1000)
-        categoriesPage.filterHeading().should('have.length', 3).within(button => {
+        categoriesPage.allFiltersBtn().should('be.visible');
+        cy.get('button.LayeredNav-filterOptionToggle-1T8').should('have.length', 3).within(button => {
             expect(button[0]).contain('Colour');
             expect(button[1]).contain('Features');
             expect(button[2]).contain('Material');
