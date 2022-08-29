@@ -28,8 +28,8 @@ describe('production basic tests', () => {
         cy.url().should('eq', 'https://www.workwearexpress.com/');
     });
     it('Enter products page and check if items exists', { retries: 3 }, () => {
-        cy.visit('https://www.workwearexpress.com/polo-shirts/mens-polos');
-        categoriesPage.categoryName().should('have.text', "Men's Polo Shirts");
+        cy.visit('https://www.workwearexpress.com/polo-shirts/all-polos');
+        categoriesPage.categoryName().should('have.text', "All Polo Shirts");
         categoriesPage.categoryProductItem().should('have.length', 20);
         categoriesPage.pagination().should('be.visible');
     });
@@ -43,7 +43,7 @@ describe('production basic tests', () => {
         });
     });
     it('check if image is visible', () => {
-      cy.visit('https://www.workwearexpress.com/polo-shirts/mens-polos')
+      cy.visit('https://www.workwearexpress.com/polo-shirts/all-polos')
         categoriesPage.categoryProductItem().first().within(() => {
             cy.get('img').and($img => {
                 // "naturalWidth" and "naturalHeight" are set when the image loads
@@ -54,11 +54,11 @@ describe('production basic tests', () => {
     it('Should enter single product page and check title and logo',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/fruit-of-the-loom-premium-polo-shirt/');
         cy.get('h1').should('contain', 'Fruit Of The Loom Premium Polo Shirt');
-        cy.get('h1')
-            .siblings()
-            .within(() => {
-                cy.get('.ProductDetail-icon-23M').should('have.css', 'background');
-            });
+        // cy.get('h1')
+        //     .siblings()
+        //     .within(() => {
+        //         cy.get('.ProductDetail-icon-23M').should('have.css', 'background');
+        //     });
     });
     it('Check product img', () => {
         cy.get('.ProductGallery-gallery-2mW').within(() => {
