@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/MaciejStruminski-Sofomo/wwe-tests#readme",
   "devDependencies": {
-    "cypress": "^10.4.0"
+    "cypress": "^10.7.0"
   }
 }

@@ -35,5 +35,8 @@ class homePage {
     navItems(){
         return cy.get('.Nav-navItem-1iy > a');
     }
+    acceprCookie(){
+        return cy.get('button#onetrust-accept-btn-handler').click()
+    }
 }
 export default new homePage();
