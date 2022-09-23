@@ -81,7 +81,7 @@ describe('production basic tests', () => {
     });
     it('Should enter red polo in search field and check if results are displayed',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/');
-        homepage.acceprCookie()
+        //homepage.acceprCookie()
         homepage.searchInput().type('red polo{enter}');
         cy.wait(2000)
         homepage.searchResult().should('have.length.at.least', 1);
