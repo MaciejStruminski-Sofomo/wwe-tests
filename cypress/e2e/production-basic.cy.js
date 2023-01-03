@@ -15,7 +15,7 @@ describe('production basic tests', () => {
     });
     it('Should enter homepage', () => {
         cy.visit('https://www.workwearexpress.com/');
-        cy.title().should('eq', "Workwear For All Sectors & Environments | Workwear Express");
+        cy.title().should('eq', "UK's Leading Workwear Provider for All Sectors | Workwear Express");
         
         homepage.banner().should('be.visible');
     });
