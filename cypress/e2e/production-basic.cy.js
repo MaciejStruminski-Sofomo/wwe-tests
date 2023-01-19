@@ -26,7 +26,7 @@ describe('production basic tests', () => {
     it('Should click logo and check if redirected to homepage', () => {
 
         cy.visit('https://www.workwearexpress.com/about-us');
-        homepage.acceptCookie()
+        //homepage.acceptCookie()
         cy.get('a[class=Header-headerLogoLink-SGA]').click();
         cy.url().should('eq', 'https://www.workwearexpress.com/');
     });
@@ -56,7 +56,7 @@ describe('production basic tests', () => {
     });
     it('Should enter single product page and check title and logo',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/fruit-of-the-loom-premium-polo-shirt/');
-        homepage.acceptCookie()
+       // homepage.acceptCookie()
         cy.get('h1').should('contain', 'Fruit Of The Loom Premium Polo Shirt');
         // cy.get('h1')
         //     .siblings()
@@ -85,7 +85,7 @@ describe('production basic tests', () => {
     });
     it('Should enter red polo in search field and check if results are displayed',{ retries: 3 }, () => {
         cy.visit('https://www.workwearexpress.com/');
-        homepage.acceptCookie()
+        //homepage.acceptCookie()
         homepage.searchInput().type('red polo{enter}');
         cy.wait(2000)
         homepage.searchResult().should('have.length.at.least', 1);
